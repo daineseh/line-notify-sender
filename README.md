@@ -1,4 +1,4 @@
-# line-notify-sendor
+# line-notify-sender
 A Simple Front End for LINE Notify
 
 ## Prerequisites
@@ -25,7 +25,7 @@ Fill the tokens to auth.json that you got from LINE Notify website
 
 Execute program
 ```
-python gui_sendor.py
+python gui_sender.py
 ```
 
 ## Reference
