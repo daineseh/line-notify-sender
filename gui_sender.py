@@ -9,6 +9,9 @@ from notify import RESPONSE_HEADER, line_notify
 def send_text(text):
     assert isinstance(text, tk.Text)
     content = text.get("1.0", tk.END)
+    if not content.strip():
+        return
+
     for name, token in auth_obj.get_data():
         req = line_notify(token, content)
         req_msg = RESPONSE_HEADER.get(req)
