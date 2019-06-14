@@ -12,7 +12,7 @@ def send_text(text):
     if not content.strip():
         return
 
-    for name, token in auth_obj.get_data():
+    for name, token in auth_obj.datas():
         req = line_notify(token, content)
         req_msg = RESPONSE_HEADER.get(req)
         if not req_msg:

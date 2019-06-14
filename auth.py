@@ -7,12 +7,18 @@ class Token:
         with open(json_name) as fp:
             self.__client_secret = json.load(fp)
 
-    def get_data(self):
+    def datas(self):
         for key, value in self.__client_secret.items():
             yield (key, value)
 
+    def get_data(self, key):
+        if key not in self.__client_secret:
+            return None
+        return self.__client_secret.get(key)
+
+
 
 if __name__ == '__main__':
-    token = Token("token.json")
+    token = Token("auth.json")
     print(token)
 
